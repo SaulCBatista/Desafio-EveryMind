@@ -1,6 +1,7 @@
 package com.saulProgramado.NunesSportsAPI.domain;
 
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 public record ProductRegisterData(
 		@NotBlank
@@ -11,7 +12,7 @@ public record ProductRegisterData(
 		
 		String describe,
 		
-		@NotBlank
+		@NotNull
 		Double price
 		) {
 
