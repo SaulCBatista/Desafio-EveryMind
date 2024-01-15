@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -25,6 +26,13 @@ public class Product {
 	private String name;
 	private String code;
 	private String describe;
-	private String price;
+	private Double price;
+	
+	public Product (ProductRegisterData data) {
+		this.name = data.name();
+		this.code = data.code();
+		this.describe = data.describe();
+		this.price = data.price();
+	}
 	
 }
