@@ -1,11 +1,14 @@
-package com.saulProgramado.NunesSportsAPI.domain;
+package com.saulProgramado.NunesSportsAPI.domain.Product;
 
+
+import com.saulProgramado.NunesSportsAPI.controller.ProductUpdateData;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -32,9 +35,19 @@ public class Product {
 		this.describe = data.describe();
 		this.price = data.price();
 	}
-	
-	public Long getId() {
-		return id;
+
+	public void updateData(@Valid ProductUpdateData data) {
+		if(data.name() != null) {
+			this.name = data.name();
+		}
+		
+		if(data.describe() != null) {
+			this.describe = data.describe();
+		}
+		
+		if(data.price() != null) {
+			this.price = data.price();
+		}
 	}
 	
 }
