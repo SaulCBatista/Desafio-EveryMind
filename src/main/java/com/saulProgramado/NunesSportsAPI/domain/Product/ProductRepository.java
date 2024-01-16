@@ -1,4 +1,4 @@
-package com.saulProgramado.NunesSportsAPI.domain;
+package com.saulProgramado.NunesSportsAPI.domain.Product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package com.saulProgramado.NunesSportsAPI.domain;
+package com.saulProgramado.NunesSportsAPI.domain.Product;
 
 public record ProductDetailsData(Long id, String nome, String code, String describe, Double price) {
 

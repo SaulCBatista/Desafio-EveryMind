@@ -1,4 +1,4 @@
-package com.saulProgramado.NunesSportsAPI.domain;
+package com.saulProgramado.NunesSportsAPI.domain.Product;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
