@@ -1,0 +1,9 @@
+CREATE TABLE product(
+	id BIGINT NOT NULL AUTO_INCREMENT,
+	name VARCHAR(100) NOT NULL,
+	code VARCHAR(10) NOT NULL,
+	product_describe VARCHAR(300),
+	price NUMERIC NOT NULL,
+	
+	PRIMARY KEY(id)
+);
