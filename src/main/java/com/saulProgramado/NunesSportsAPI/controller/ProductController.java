@@ -19,6 +19,7 @@ import com.saulProgramado.NunesSportsAPI.domain.Product.ProductConsultData;
 import com.saulProgramado.NunesSportsAPI.domain.Product.ProductDetailsData;
 import com.saulProgramado.NunesSportsAPI.domain.Product.ProductRegisterData;
 import com.saulProgramado.NunesSportsAPI.domain.Product.ProductRepository;
+import com.saulProgramado.NunesSportsAPI.domain.Product.ProductUpdateData;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
@@ -32,7 +33,7 @@ public class ProductController {
 	
 	@PostMapping
 	@Transactional
-	public ResponseEntity register(@RequestBody @Valid ProductRegisterData data) {
+	public ResponseEntity<ProductDetailsData> register(@RequestBody @Valid ProductRegisterData data) {
 		Product product = new Product(data);
 		repository.save(product);
 		
@@ -45,9 +46,16 @@ public class ProductController {
 		return ResponseEntity.ok(page);
 	}
 	
-	@PutMapping
+	@GetMapping("/{id}")
+	public ResponseEntity<ProductDetailsData> details(@PathVariable Long id) {
+		var product = repository.getReferenceById(id);
+		
+		return ResponseEntity.ok(new ProductDetailsData(product));
+	}
+	
+	@PutMapping("/{id}")
 	@Transactional
-	public ResponseEntity update(@RequestBody @Valid ProductUpdateData data) {
+	public ResponseEntity<ProductDetailsData> update(@RequestBody @Valid ProductUpdateData data) {
 		var product = repository.getReferenceById(data.id());
 		product.updateData(data);
 		

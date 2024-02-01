@@ -1,4 +1,6 @@
-package com.saulProgramado.NunesSportsAPI.controller;
+package com.saulProgramado.NunesSportsAPI.domain.Product;
+
+import java.math.BigDecimal;
 
 import jakarta.validation.constraints.NotNull;
 
@@ -7,6 +9,6 @@ public record ProductUpdateData(
 		Long id,
 		String name,
 		String describe, 
-		Double price) {
+		BigDecimal price) {
 
 }

@@ -1,8 +1,9 @@
 package com.saulProgramado.NunesSportsAPI.domain.Product;
 
 
-import com.saulProgramado.NunesSportsAPI.controller.ProductUpdateData;
+import java.math.BigDecimal;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -26,8 +27,9 @@ public class Product {
 	private Long id;
 	private String name;
 	private String code;
+	@Column(name = "product_describe")
 	private String describe;
-	private Double price;
+	private BigDecimal price;
 	
 	public Product (ProductRegisterData data) {
 		this.name = data.name();
